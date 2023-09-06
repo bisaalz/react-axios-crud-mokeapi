@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../Components/Navbar";
+import { useNavigate } from "react-router-dom";
 // import "./App.css";
 
 const AllBlogs = () => {
+  const navigate = useNavigate()   //this is for react router dom
   const [blogs, setBlogs] = useState([]);
 
   //-----------fetch data from api get request----------------
@@ -77,6 +79,11 @@ const AllBlogs = () => {
                 <p className="card-text">{blog.description}</p>
                 <h6 className="card-title">{blog.createdAt}</h6>
               </div>
+              <p onClick={() => navigate("/singleblog/" + blog.id) } style={{color:'red', cursor:'pointer'} }>
+                {/* <a href="/singleblog">See More...</a> page will reload with anchor tag
+                See More... */}
+                See More...
+                </p>
             </div> 
           );
         })}

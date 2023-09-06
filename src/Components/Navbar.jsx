@@ -12,7 +12,7 @@ const Navbar = () => {
           </div>
 
           <div className='border p-2'>
-          <a className="nav-link" href="/adduseeffect">Add Blog Use Effect</a> 
+          <a className="nav-link" href="/adduseeffect">Add Blog New method</a> 
           </div>
       </nav>
     </div>  

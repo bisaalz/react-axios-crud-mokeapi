@@ -9,9 +9,15 @@ const SingleBlogs = () => {
   const [blog, setblog] = useState();
 
   const fetchBlogss = async () => {
+    // const response = await axios.get(
+    //   "https://64f40640932537f4051a1368.mockapi.io/blogs/" + id
+    // );
+
+    // or you can use like this string literal/template literal
     const response = await axios.get(
-      "https://64f40640932537f4051a1368.mockapi.io/blogs/" + id
-    );
+        `https://64f40640932537f4051a1368.mockapi.io/blogs/${id}`
+      );
+
 
     // console.log(response);
     if (response.status == 200) {
@@ -20,6 +26,8 @@ const SingleBlogs = () => {
       alert("error retriving data");
     }
   };
+
+  console.log(blog);
 
   useEffect(() => {
     //  console.log('hello');
@@ -45,7 +53,7 @@ const SingleBlogs = () => {
                 </div>
               </div>
             ) : (
-              " "
+              " Loading..."
             )}
 
 

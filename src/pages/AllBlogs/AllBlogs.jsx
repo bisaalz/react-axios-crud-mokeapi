@@ -79,7 +79,12 @@ const AllBlogs = () => {
                 <p className="card-text">{blog.description}</p>
                 <h6 className="card-title">{blog.createdAt}</h6>
               </div>
-              <p onClick={() => navigate("/singleblog/" + blog.id) } style={{color:'red', cursor:'pointer'} }>
+              
+              {/* method1 */}
+              {/* <p onClick={() => navigate("/singleblog/" + blog.id) } style={{color:'red', cursor:'pointer'} }> */}
+              
+              {/* method2 */}
+              <p onClick={() => navigate(`/singleblog/${blog.id}`)} style={{color:'red', cursor:'pointer'} }>
                 {/* <a href="/singleblog">See More...</a> page will reload with anchor tag
                 See More... */}
                 See More...

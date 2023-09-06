@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import "./addblogs.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddBlogs = () => {
+  const navigate = useNavigate()
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
@@ -13,6 +15,7 @@ const AddBlogs = () => {
   //   console.log(image, "Image");
 
   const createBlog = async (e) => {
+    try {
     e.preventDefault();  //needed for prevend page to load when submit
 
     const data = {
@@ -26,7 +29,18 @@ const AddBlogs = () => {
       data
     );
 
+    //it will redirect to homepage
+    if(response.status == 201) {
+        navigate("/")
+    }
+
     console.log("", response);
+
+    } catch (error) {
+        console.error("Error posting data:", error);
+    }
+
+  
 
     //    or,
     //    const response= await axios.post("https://64f40640932537f4051a1368.mockapi.io/blogs/",{

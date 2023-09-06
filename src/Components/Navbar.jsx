@@ -10,6 +10,10 @@ const Navbar = () => {
           <div className='border p-2'>
           <a className="nav-link" href="/add">Add Blog</a> 
           </div>
+
+          <div className='border p-2'>
+          <a className="nav-link" href="/adduseeffect">Add Blog Use Effect</a> 
+          </div>
       </nav>
     </div>  
   )

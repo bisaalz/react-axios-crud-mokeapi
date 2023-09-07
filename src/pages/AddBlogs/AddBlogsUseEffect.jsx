@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 const AddBlogsUseEffect = () => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [image, setImage] = useState("");
 
   const createBlogsz = async (e) => {
     e.preventDefault();
